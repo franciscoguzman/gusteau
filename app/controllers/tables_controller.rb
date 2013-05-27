@@ -5,5 +5,7 @@ class TablesController < ApplicationController
     @tables = Table.all
 
   end
-
+  def show
+    @single_table = Table.find(params[:id])
+  end
 end
