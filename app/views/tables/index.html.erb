@@ -1,3 +1,20 @@
-<% @tables.each do |table| %>
-  <p><%=  link_to table.name, table_path(table.id) %></p>
-<% end %>
+<table width="200" bgcolor="#48d1cc" border="2" bordercolor="#ffdab9" cellpadding="2" cellspacing="2" align="center">
+  <tr>
+    <td colspan="3" bgcolor="#90ee90" align="center">
+      Estado de la mesa:
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><p>Mesa #</p></td>
+    <td align="center"><p>Asientos</p></td>
+    <td align="center"><p>Estado</p></td>
+  </tr>
+  <% @tables.each do |table| %>
+    <tr bgcolor="#9acd32">
+        <td><p><%= table.name  %></p></td>
+        <td><p><%= table.seats%></p></td>
+        <td><span><%=link_to table.status, tables_path = @show %></span></td>
+    </tr>
+  <% end %>
+
+</table>

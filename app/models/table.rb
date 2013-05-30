@@ -1,4 +1,4 @@
 class Table < ActiveRecord::Base
-  attr_accessible :name, :seats
+  attr_accessible :name, :seats, :status
 
 end
