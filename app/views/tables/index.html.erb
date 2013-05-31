@@ -10,10 +10,12 @@
     <td align="center"><p>Estado</p></td>
   </tr>
   <% @tables.each do |table| %>
+      <% table_id = table.id %>
     <tr bgcolor="#9acd32">
         <td><p><%= table.name  %></p></td>
         <td><p><%= table.seats%></p></td>
-        <td><span><%=link_to table.status, tables_path = @show %></span></td>
+        <td><span><%= link_to table.status, table_path(table_id) %></span></td>
+        <td><span><%= link_to('Abrir cuenta', new_table_account_path(table_id)) if table.status == 'Available' %></span></td>
     </tr>
   <% end %>
 
