@@ -1,0 +1,19 @@
+<% provide(:title, "Información de la Cuenta") %>
+<h1>Información de la cuenta</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_tag do %>
+
+        <%= label_tag "Cuenta #" %></br>
+        <%= label_tag @account.id %></br>
+
+        <%= label_tag "Mesa #" %></br>
+        <%= label_tag @account.table_id %></br>
+
+        <%= label_tag "Fecha de Consumo" %></br>
+        <%= label_tag @account.closed_at %></br>
+        <%= link_to('Editar', edit_table_account_path(@account.table_id, @account.id) ) %>
+    <% end %>
+  </div>
+</div>

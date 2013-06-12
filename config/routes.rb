@@ -1,13 +1,15 @@
 Gusteau::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
+
   resources :tables do
     resources :accounts
   end
+  resources :products, :only => [:index, :show]
   # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
+  #   match 'la_lana' => 'accounts#index', :as => 'accounts'
   # Keep in mind you can assign values other than :controller and :action
-
+      resources :accounts, :only => [:index, :edit, :show]
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
@@ -50,7 +52,7 @@ Gusteau::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'tables#index'
 
   # See how all your routes lay out with "rake routes"
 

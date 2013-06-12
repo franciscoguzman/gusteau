@@ -1,0 +1,16 @@
+
+<h1>Modificar Cuenta</h1>
+
+<%= form_for(@account) do |f| %>
+
+    <%= f.label :id %>
+    <%= f.text_field :id %>
+
+    <%= f.label :table_id %>
+    <%= f.text_field :table_id %>
+
+    <%= f.label :created_at %>
+    <%= f.text_field :created_at %>
+    <%= f.submit "Save changes" %>
+
+<% end %>

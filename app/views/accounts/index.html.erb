@@ -1,0 +1,22 @@
+<table width="600" bgcolor="#48d1cc" border="2" bordercolor="#ffdab9" cellpadding="1" cellspacing="1" align="center">
+  <tr>
+    <td colspan="4" bgcolor="#90ee90" align="center">
+      Todas las cuentas:
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><p>Mesa #</p></td>
+    <td align="center"><p>Cuenta #</p></td>
+    <td align="center"><p>Fecha de Consumo</p></td>
+  </tr>
+  <% @accounts.each do |account| %>
+      <tr bgcolor="#9acd32">
+        <td><p><%= account.table_id  %></p></td>
+        <td><p><%=	 account.id %></p></td>
+        <td><p><p><%= account.closed_at%> </p></td>
+        <td><p><%= link_to('Detalle', table_account_path(account.table_id, account.id)) %></p></td>
+      </tr>
+
+  <% end %>
+
+</table>

@@ -1,0 +1,11 @@
+<h1> This is a new account </h1>
+<p> Información de la cuenta</p>
+
+<%= form_for @account, :url=> table_accounts_path do |f| %>
+    <%= f.label :table_id, '# mesa' %>
+    <%= label_tag @table.id %>
+    <%= f.label :created_at, 'Hora de apertura' %>
+    <%= label_tag Time.now.to_s %>
+    <%= f.submit 'Abrir' %>
+<% end %>
+
