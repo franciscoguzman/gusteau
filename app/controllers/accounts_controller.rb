@@ -20,8 +20,20 @@ class AccountsController < ApplicationController
     @account = Account.new(:table_id => params[:table_id])
     if @account.save
       Table.find(params[:table_id]).update_attribute :status, 'In Service'
-      redirect_to table_accounts_path('hjdsakhjkdk')
+      redirect_to accounts_path
     end
+  end
+
+  def update
+    account_params = params[:account]
+    @account = Account.find params[:id]
+    @account.table_id = account_params[:table_id]
+    if @account.save
+      redirect_to accounts_path
+    end
+
+    #@account.update_attribute :table_id, account_params[:table_id]
+
   end
 
   def edit
