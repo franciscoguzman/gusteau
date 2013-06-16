@@ -6,6 +6,6 @@ class TablesController < ApplicationController
 
   end
   def show
-    @single_table = Table.find(params[:id])
+    @table = Table.find(params[:id])
   end
 end
