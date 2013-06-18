@@ -1,19 +1,22 @@
+<%- model_class = Product -%>
 <div class="page-header">
-  <h1><%="Producto #{@product.name} "%></h1>
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= 'Nombre' %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @product.name %></dd>
-  <dt><strong><%= 'Descripción' %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @product.description %></dd>
-  <dt><strong><%= 'Precio' %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
   <dd><%= @product.price %></dd>
 </dl>
 
 <div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              products_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              product_path(@product), :class => 'btn' %>
+              edit_product_path(@product), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               product_path(@product),
               :method => 'delete',
