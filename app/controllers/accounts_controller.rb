@@ -8,6 +8,7 @@ class AccountsController < ApplicationController
   def show
 
     @account = Account.find(params[:id])
+    @account_items = @account.account_items
 
   end
 

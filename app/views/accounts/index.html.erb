@@ -1,14 +1,14 @@
 <%- model_class = Account -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1><%='Cuentas' %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:table_id) %></th>
+      <th><%= '# Cuenta' %></th>
+      <th><%= 'Mesa' %></th>
       <th><%= model_class.human_attribute_name(:closed_at) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= 'Fecha de Apertura de Cuenta' %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -32,7 +32,3 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_account_path,
-            :class => 'btn btn-primary' %>
