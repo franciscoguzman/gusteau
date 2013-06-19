@@ -9,6 +9,7 @@ class AccountsController < ApplicationController
 
     @account = Account.find(params[:id])
     @account_items = @account.account_items
+    @account_item = AccountItem.new
 
   end
 

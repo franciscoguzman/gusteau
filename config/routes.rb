@@ -7,11 +7,13 @@ Gusteau::Application.routes.draw do
   resources :tables do
     resources :accounts
   end
-  resources :products, :only => [:index, :show]
   # Sample of regular route:
   #   match 'la_lana' => 'accounts#index', :as => 'accounts'
   # Keep in mind you can assign values other than :controller and :action
       resources :accounts
+
+  post 'account_items/create' => 'account_items#create', :as => 'add_account_item'
+  get 'account_items/search_products' => 'account_items#search_products'
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
