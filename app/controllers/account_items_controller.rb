@@ -6,11 +6,11 @@ class AccountItemsController < ApplicationController
 
   def search_products
     if params[:term]
-      product_list = Product.where("name like '%#{params[:term]}%'")
+      product_list = Product.where("name like '#{params[:term]}%'")
     else
       product_list = Product.all
     end
-    list = product_list.map { |p| Hash[ :id => p.id, :name => p.name, :price => p.price ] }
+    list = product_list.map { |p| Hash[ :value => p.name, :label => p.name, :price => p.price, :id => p.id ] }
     render :json => list
   end
 

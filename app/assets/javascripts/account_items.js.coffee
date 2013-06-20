@@ -3,4 +3,10 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
-  $('#product_name').autocomplete({source: "/account_items/search_products"});
+  index = 1
+  $('#product_name').autocomplete
+    source: "/account_items/search_products",
+    minLength: 2,
+    select: (event, ui) ->
+      $('#product_id').val(ui.item.id)
+      return
