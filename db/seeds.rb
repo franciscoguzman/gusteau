@@ -22,7 +22,7 @@ Product.create(:name => 'Pasta', :description => 'Italian Style', :price => 12.0
 Product.create(:name => 'Calabaza', :description => 'Pumpkin', :price => 5.00)
 
 #Account_Items
-AccountItem.create(:account_id => '1', :product_id => '1', :quantity => '2')
-AccountItem.create(:account_id => '1', :product_id => '4', :quantity => '3')
-AccountItem.create(:account_id => '1', :product_id => '3', :quantity => '4')
-AccountItem.create(:account_id => '1', :product_id => '2', :quantity => '5')
+AccountItem.create(:account_id => '1', :product_id => '1', :quantity => '2', :price => 10.25)
+AccountItem.create(:account_id => '1', :product_id => '4', :quantity => '3', :price => 5.00)
+AccountItem.create(:account_id => '1', :product_id => '3', :quantity => '4', :price => 12.00)
+AccountItem.create(:account_id => '1', :product_id => '2', :quantity => '5', :price => 1.25)

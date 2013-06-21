@@ -2,6 +2,22 @@ class AccountItemsController < ApplicationController
 
   def create
 
+    product = Product.find params[:account_item][:product_id]
+
+    account_item = AccountItem.new
+    account_item.account_id = params[:account_id]
+    account_item.quantity = params[:account_item][:quantity]
+    account_item.product_id = product.id
+    account_item.price = product.price
+
+    if account_item.save
+      notice = 'Cuenta actualizada'
+    else
+      notice = 'No se pudo agregar'
+    end
+
+    redirect_to account_path(params[:account_id]), :notice => notice
+
   end
 
   def search_products

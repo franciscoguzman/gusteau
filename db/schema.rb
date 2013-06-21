@@ -10,14 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612221855) do
+ActiveRecord::Schema.define(:version => 20130618204352) do
 
   create_table "account_items", :force => true do |t|
     t.integer  "account_id"
     t.integer  "product_id"
     t.integer  "quantity"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.decimal  "price",      :precision => 10, :scale => 0
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   create_table "accounts", :force => true do |t|
