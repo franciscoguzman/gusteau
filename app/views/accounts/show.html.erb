@@ -44,12 +44,12 @@
   <tbody>
     <%= form_for @account_item, :url => add_account_item_path do |f|  %>
         <td>
-            <%= text_field_tag 'product_name' %>
-            </td>
+          <%= f.text_field :quantity, :class => 'text_field' %>
+        </td>
         <td>                </td>
         <td>
-            <%= f.text_field :quantity, :class => 'text_field' %>
-            <%= f.submit '+', :class => 'btn-small btn-primary' %></td>
+          <%= text_field_tag 'product_name' %>
+          <%= f.submit '+', :class => 'btn-small btn-primary' %></td>
 
             <%= f.hidden_field :product_id, :class => 'text_field', :id => 'product_id' %>
             <%= hidden_field_tag 'account_id', @account.id %>
