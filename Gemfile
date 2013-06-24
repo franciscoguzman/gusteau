@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
@@ -10,6 +9,7 @@ gem 'mysql2'
 gem 'json'
 
 group :production do
+  ruby '2.0.0'
   gem 'pg'
 end
 
