@@ -16,3 +16,6 @@
 
 #ignore .idea folder
 /.idea
+
+#ignore .rbenv-version
+/.rbenv-version
