@@ -1,16 +1,30 @@
-<%- model_class = Table -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1><%= "Mesa # #{@table.name} " %>
+    <% if @table.status.present? %>
+      <span>(Activa)</span>
+    <% end %>
+  </h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dt><strong><%= "# Mesa" %>:</strong></dt>
   <dd><%= @table.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:seats) %>:</strong></dt>
+  <dt><strong><%= "# Asientos" %>:</strong></dt>
   <dd><%= @table.seats %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dt><strong><%= "Estado" %>:</strong></dt>
   <dd><%= @table.status %></dd>
 </dl>
+
+<% if @account %>
+    <div>
+      <%= render :partial => '/shared/account_info' %>
+    </div>
+
+
+<% else %>
+
+<%end%>
+
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

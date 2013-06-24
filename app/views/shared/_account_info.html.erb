@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= 'Cant.' %></th>
+    <th><%= 'Producto' %></th>
+    <th><%= 'Precio' %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @account_items.each do |account_item| %>
+      <tr>
+        <td><%= account_item.quantity %></td>
+        <td><%= account_item.product.name %></td>
+        <td><%= account_item.price %></td>
+      </tr>
+  <% end %>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Total</td>
+    <td><%= @account.total %></td>
+  </tr>
+  </tbody>
+</table>
