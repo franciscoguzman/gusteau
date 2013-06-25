@@ -1,3 +1,9 @@
+# As stated in url http://www.a.rnaud.net/2011/10/how-to-fix-invalid-byte-sequence-in-us-ascii-in-bundler-installation/
+if RUBY_VERSION =~ /1.9/
+  Encoding.default_external = Encoding::UTF_8
+  Encoding.default_internal = Encoding::UTF_8
+end
+
 source 'https://rubygems.org'
 ruby '1.9.3'
 gem 'rails', '3.2.13'
