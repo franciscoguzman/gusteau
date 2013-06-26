@@ -1,4 +1,8 @@
 <table class="table table-striped">
+  <col class="qty-column">
+  <col class="name-column">
+  <col class="price-column">
+
   <thead>
   <tr>
     <th><%= 'Cant.' %></th>
@@ -9,35 +13,39 @@
   <tbody>
   <% @account_items.each do |account_item| %>
       <tr>
-        <td><%= account_item.quantity %></td>
+        <td class="td-numeric"><%= account_item.quantity %></td>
         <td><%= account_item.product.name %></td>
-        <td><%= account_item.price %></td>
+        <td class="td-numeric"><%= account_item.price %></td>
       </tr>
   <% end %>
+
+  <tr>
+    <%= form_for @account_item, :url => add_account_item_path do |f| %>
+        <%= f.hidden_field :product_id, :class => 'text_field', :id => 'product_id' %>
+        <%= hidden_field_tag 'account_id', @account.id %>
+        <td class="td-numeric">
+          <%= f.text_field :quantity, :class => 'text_field prod-qty' %>
+        </td>
+        <td>
+          <%= text_field_tag 'product_name', nil, :class => 'text_field prod-name' %>
+        </td>
+        <td>
+          <%= f.submit '+', :class => 'btn-small btn-primary btn-success' %>
+        </td>
+    <% end %>
+  </tr>
+
   <tr>
     <td>&nbsp;</td>
     <td>Total</td>
-    <td><%= @account.total %></td>
+    <td class="td-numeric"><%= @account.total %></td>
   </tr>
   </tbody>
 </table>
 
 <div>
-  <table>
+  <table class="table table-striped">
     <tbody>
-    <%= form_for @account_item, :url => add_account_item_path do |f|  %>
-        <td>
-          <%= f.text_field :quantity, :class => 'text_field' %>
-        </td>
-        <td>                </td>
-        <td>
-          <%= text_field_tag 'product_name' %>
-          <%= f.submit '+', :class => 'btn-small btn-primary btn-success' %></td>
-
-        <%= f.hidden_field :product_id, :class => 'text_field', :id => 'product_id' %>
-        <%= hidden_field_tag 'account_id', @account.id %>
-
-    <% end %>
     </tbody>
   </table>
 </div>
