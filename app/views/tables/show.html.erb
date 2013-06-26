@@ -1,8 +1,5 @@
 <div class="page-header">
-  <h1><%= "Mesa # #{@table.name} " %>
-    <% if @table.status.present? %>
-      <span>(Activa)</span>
-    <% end %>
+  <h1><%= "Mesa # #{@table.name} #{@table.status}" %>
   </h1>
 </div>
 
@@ -18,8 +15,8 @@
 <% if @account %>
     <div>
       <%= render :partial => '/shared/account_info' %>
-    </div>
 
+    </div>
 
 <% else %>
 
