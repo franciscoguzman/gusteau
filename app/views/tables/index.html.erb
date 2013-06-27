@@ -15,7 +15,11 @@
       <tr>
         <td><%= link_to table.id, table_path(table) %></td>
         <td><%= table.seats %></td>
-        <td><%= table.status %></td>
+        <% if table.status.present? %>
+            <td><span class="label label-success"><%= table.status %></span></td>
+        <% else %>
+            <td><span class="label label-warning"><%= 'Available' %></span></td>
+        <% end %>
         <td><%= table.created_at %></td>
       </tr>
     <% end %>

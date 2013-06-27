@@ -8,7 +8,9 @@ class AccountsController < ApplicationController
   def show
 
     @account = Account.find(params[:id])
-    @account_items = @account.account_items
+
+    @account_items = AccountItem.grouped_items(@account.id)
+    @account_items_sum = @account_items.sum('quantity')
     @account_item = AccountItem.new
 
   end

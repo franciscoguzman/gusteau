@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<table class="table table-striped account-items">
   <col class="qty-column">
   <col class="name-column">
   <col class="price-column">
@@ -8,14 +8,17 @@
     <th><%= 'Cant.' %></th>
     <th><%= 'Producto' %></th>
     <th><%= 'Precio' %></th>
+    <th><%=	'Subtotal' %></th>
   </tr>
   </thead>
   <tbody>
   <% @account_items.each do |account_item| %>
+    <% qty = @account_items_sum[account_item.product_id] %>
       <tr>
-        <td class="td-numeric"><%= account_item.quantity %></td>
+        <td class="td-numeric"><%= qty %></td>
         <td><%= account_item.product.name %></td>
         <td class="td-numeric"><%= account_item.price %></td>
+        <td class="td-numeric"><%= account_item.price * qty %></td>
       </tr>
   <% end %>
 
@@ -28,14 +31,15 @@
         </td>
         <td>
           <%= text_field_tag 'product_name', nil, :class => 'text_field prod-name' %>
+          <%= f.submit '+', :class => 'btn-small btn-primary btn-success prod-submit' %>
         </td>
-        <td>
-          <%= f.submit '+', :class => 'btn-small btn-primary btn-success' %>
-        </td>
+        <td></td>
+        <td></td>
     <% end %>
   </tr>
 
   <tr>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>Total</td>
     <td class="td-numeric"><%= @account.total %></td>

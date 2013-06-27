@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(:version => 20130618204352) do
   end
 
   create_table "tables", :force => true do |t|
-    t.string   "name",                                :null => false
+    t.string   "name",       :null => false
     t.integer  "seats"
-    t.string   "status",     :default => "Available"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.string   "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

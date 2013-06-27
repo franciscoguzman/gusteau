@@ -3,7 +3,7 @@ class CreateTables < ActiveRecord::Migration
     create_table :tables do |t|
       t.string  :name, :null => false
       t.integer :seats
-      t.string  :status, :default => 'Available'
+      t.string  :status, :default => nil
 
       t.timestamps
     end
