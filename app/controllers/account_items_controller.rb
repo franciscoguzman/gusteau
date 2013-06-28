@@ -4,11 +4,23 @@ class AccountItemsController < ApplicationController
 
     product = Product.find params[:account_item][:product_id]
 
-    account_item = AccountItem.new
-    account_item.account_id = params[:account_id]
-    account_item.quantity = params[:account_item][:quantity]
-    account_item.product_id = product.id
+    account_item = AccountItem.find_or_create_by_account_id_and_product_id(params[:account_id], product.id)
+    quantity = params[:account_item][:quantity].to_i + (account_item.quantity || 0)
+    account_item.quantity = quantity
     account_item.price = product.price
+
+=begin
+    account_item = AccountItem.where(:account_id => params[:account_id], :product_id => product.id)
+    if account_item.present?
+      account_item.quantity += params[:account_item][:quantity]
+    else
+      account_item = AccountItem.new
+      account_item.account_id = params[:account_id]
+      account_item.quantity = params[:account_item][:quantity]
+      account_item.product_id = product.id
+      account_item.price = product.price
+    end
+=end
 
     if account_item.save
       notice = 'Cuenta actualizada'

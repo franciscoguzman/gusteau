@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(:version => 20130618204352) do
     t.integer  "account_id"
     t.integer  "product_id"
     t.integer  "quantity"
-    t.decimal  "price",      :precision => 10, :scale => 0
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.decimal  "price"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "accounts", :force => true do |t|
@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(:version => 20130618204352) do
   create_table "products", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.decimal  "price",       :precision => 10, :scale => 0
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.decimal  "price"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "tables", :force => true do |t|

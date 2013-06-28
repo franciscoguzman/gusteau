@@ -13,12 +13,11 @@
   </thead>
   <tbody>
   <% @account_items.each do |account_item| %>
-    <% qty = @account_items_sum[account_item.product_id] %>
       <tr>
-        <td class="td-numeric"><%= qty %></td>
+        <td class="td-numeric"><%= account_item.quantity %></td>
         <td><%= account_item.product.name %></td>
         <td class="td-numeric"><%= account_item.price %></td>
-        <td class="td-numeric"><%= account_item.price * qty %></td>
+        <td class="td-numeric"><%= account_item.price * account_item.quantity %></td>
       </tr>
   <% end %>
 
