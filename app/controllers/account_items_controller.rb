@@ -1,7 +1,6 @@
 class AccountItemsController < ApplicationController
 
   def create
-
     product = Product.find params[:account_item][:product_id]
 
     account_item = AccountItem.find_or_create_by_account_id_and_product_id(params[:account_id], product.id)
