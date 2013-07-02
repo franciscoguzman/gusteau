@@ -7,7 +7,9 @@
       <th><%= '# Mesa' %></th>
       <th><%= 'Sillas' %></th>
       <th><%= 'Estado' %></th>
-      <th><%= 'Hora de apertura' %></th>
+      <th><%= 'Total' %></th>
+      <th><%= 'Apertura cuenta' %></th>
+
     </tr>
   </thead>
   <tbody>
@@ -16,11 +18,14 @@
         <td><%= link_to table.id, table_path(table) %></td>
         <td><%= table.seats %></td>
         <% if table.status.present? %>
-            <td><span class="label "><%= table.status %></span></td>
+            <td><span class="btn-warning btn-primary btn-small"><%=link_to table.status, table_path(table) %></span></td>
+            <td><%= table.current_account.total %></td>
+            <td><%= table.current_account.created_at %></td>
         <% else %>
-            <td><span class="label label-success"><%= 'Disponible' %></span></td>
+            <td><span class="btn-success btn-primary btn-small"><%=link_to 'Disponible', new_table_account_path(table) %></span></td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
         <% end %>
-        <td><%= table.created_at %></td>
       </tr>
     <% end %>
   </tbody>

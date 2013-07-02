@@ -5,12 +5,16 @@ Gusteau::Application.routes.draw do
   # first created -> highest priority.
 
   resources :tables do
-    resources :accounts
+    resources :accounts, :except => [:create]
   end
   # Sample of regular route:
   #   match 'la_lana' => 'accounts#index', :as => 'accounts'
   # Keep in mind you can assign values other than :controller and :action
-      resources :accounts
+  resources :accounts, :except => [:create] do
+    member do
+      get 'checkout'
+    end
+  end
 
   post 'account_items/create' => 'account_items#create', :as => 'add_account_item'
   get 'account_items/search_products' => 'account_items#search_products'

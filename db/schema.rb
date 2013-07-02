@@ -23,10 +23,14 @@ ActiveRecord::Schema.define(:version => 20130618204352) do
   end
 
   create_table "accounts", :force => true do |t|
-    t.integer  "table_id",   :null => false
+    t.integer  "table_id",                    :null => false
+    t.decimal  "total",      :default => 0.0
+    t.decimal  "discount",   :default => 0.0
+    t.decimal  "charged",    :default => 0.0
     t.datetime "closed_at"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "paid_at"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "products", :force => true do |t|

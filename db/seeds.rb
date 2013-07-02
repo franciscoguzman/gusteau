@@ -7,14 +7,14 @@
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
 #Tables
-Table.create(:name => '1', :seats => 4 )
-Table.create(:name => '2', :seats => 6, :status => 'In Service')
+Table.create(:name => '1', :seats => 4, :status => 'En Servicio')
+Table.create(:name => '2', :seats => 6, :status => 'En Servicio')
 Table.create(:name => '3', :seats => 4 )
 Table.create(:name => '4', :seats => 8 )
-Table.create(:name => '5', :seats => 4, :status => 'In Service')
-Table.create(:name => '6', :seats => 4, :status => 'In Service')
+Table.create(:name => '5', :seats => 4, :status => 'En Servicio')
+Table.create(:name => '6', :seats => 4, :status => 'En Servicio')
 Table.create(:name => '7', :seats => 6 )
-Table.create(:name => '8', :seats => 6, :status => 'In Service')
+Table.create(:name => '8', :seats => 6, :status => 'En Servicio')
 Table.create(:name => '9', :seats => 8 )
 Table.create(:name => '10', :seats => 2 )
 
@@ -23,6 +23,8 @@ Account.create(:table => Table.find_by_name('2'))
 Account.create(:table => Table.find_by_name('5'))
 Account.create(:table => Table.find_by_name('6'))
 Account.create(:table => Table.find_by_name('8'))
+Account.create(:table => Table.find_by_name('1'))
+
 
 #Products
 Product.create(:name => 'Quesadillas', :description => 'Awesome quesadillas', :price => 10.25)

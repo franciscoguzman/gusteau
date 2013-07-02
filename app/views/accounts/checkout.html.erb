@@ -1,5 +1,13 @@
-<h1><%= "Cuenta Mesa # #{ @account.table_id }" %></h1>
+<div class="page-header">
+  <h1><%= "Checkout de la mesa #{ @account.table_id }" %></h1>
+</div>
 
+<dl class="dl-horizontal">
+  <dt><strong><%= 'Folio' %>:</strong></dt>
+  <dd><%= @account.id %></dd>
+  <dt><strong><%= 'Fecha/Hora Apertura' %>:</strong></dt>
+  <dd><%= @account.created_at %></dd>
+</dl>
 
 <table class="table table-striped account-items">
   <col class="qty-column">
@@ -25,22 +33,6 @@
   <% end %>
 
   <tr>
-    <%= form_for @account_item, :url => add_account_item_path do |f| %>
-        <%= f.hidden_field :product_id, :class => 'text_field', :id => 'product_id' %>
-        <%= hidden_field_tag 'account_id', @account.id %>
-        <td class="td-numeric">
-          <%= f.text_field :quantity, :class => 'text_field prod-qty' %>
-        </td>
-        <td>
-          <%= text_field_tag 'product_name', nil, :class => 'text_field prod-name' %>
-          <%= f.submit '+', :class => 'btn-small btn-primary btn-success prod-submit' %>
-        </td>
-        <td></td>
-        <td></td>
-    <% end %>
-  </tr>
-
-  <tr>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>Total</td>
@@ -48,5 +40,7 @@
   </tr>
   </tbody>
 </table>
+
+
 
 

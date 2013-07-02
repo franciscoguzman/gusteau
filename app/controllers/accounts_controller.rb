@@ -15,15 +15,10 @@ class AccountsController < ApplicationController
   end
 
   def new
-    @table = Table.find(params[:table_id])
-    @account = Account.new(:table_id => @table.id)
-  end
-
-  def create
     @account = Account.new(:table_id => params[:table_id])
     if @account.save
-      Table.find(params[:table_id]).update_attribute :status, 'In Service'
-      redirect_to accounts_path
+      Table.find(params[:table_id]).update_attribute :status, 'En Servicio'
+      redirect_to account_path(@account.id)
     end
   end
 
@@ -40,9 +35,13 @@ class AccountsController < ApplicationController
   end
 
   def edit
-    @account = Account.find(params[:id])
+    @account = Account.find params[:id]
 
   end
 
+  def checkout
+      @account = Account.find params[:id]
+      @account_items = @account.account_items
+  end
 
 end

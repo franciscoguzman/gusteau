@@ -3,10 +3,11 @@ class Account < ActiveRecord::Base
   has_many :account_items
   attr_accessible :table, :table_id, :closed_at, :id
 
-  def total
+  def update_total
     total = 0
     account_items.each { |ai| total += (ai.price * ai.quantity) }
-    total
+    self.total = total
+    save
   end
 
 end

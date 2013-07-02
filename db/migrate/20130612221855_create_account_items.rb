@@ -1,4 +1,4 @@
-class AccountItems < ActiveRecord::Migration
+class CreateAccountItems < ActiveRecord::Migration
   def change
 
     create_table :account_items do |t|

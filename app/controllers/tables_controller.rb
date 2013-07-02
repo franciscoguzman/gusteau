@@ -2,7 +2,7 @@ class TablesController < ApplicationController
 
   def index
 
-    @tables = Table.all
+    @tables = Table.order('name').all
 
   end
 

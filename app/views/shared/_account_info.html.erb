@@ -12,14 +12,14 @@
   </tr>
   </thead>
   <tbody>
-  <% @account_items.each do |account_item| %>
-      <tr>
-        <td class="td-numeric"><%= account_item.quantity %></td>
-        <td><%= account_item.product.name %></td>
-        <td class="td-numeric"><%= account_item.price %></td>
-        <td class="td-numeric"><%= account_item.price * account_item.quantity %></td>
-      </tr>
-  <% end %>
+      <% @account_items.each do |account_item| %>
+          <tr>
+            <td class="td-numeric"><%= account_item.quantity %></td>
+            <td><%= account_item.product.name %></td>
+            <td class="td-numeric"><%= account_item.price %></td>
+            <td class="td-numeric"><%= account_item.price * account_item.quantity %></td>
+          </tr>
+      <% end %>
 
   <tr>
     <%= form_for @account_item, :url => add_account_item_path do |f| %>
@@ -46,9 +46,10 @@
   </tbody>
 </table>
 
-<div>
-  <table class="table table-striped">
-    <tbody>
-    </tbody>
-  </table>
+<div class="form-actions">
+  <%= link_to 'Cerrar Cuenta',
+              checkout_account_path(@account.id),
+              :data => { :confirm => 'Seguro que quiere cerrar la cuenta?' },
+              :class => 'btn btn-info' %>
 </div>
+

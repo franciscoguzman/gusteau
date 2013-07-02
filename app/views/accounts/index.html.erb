@@ -5,11 +5,11 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= '# Cuenta' %></th>
-      <th><%= 'Mesa' %></th>
-      <th><%= model_class.human_attribute_name(:closed_at) %></th>
-      <th><%= 'Fecha de Apertura de Cuenta' %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th># Cuenta</th>
+      <th>Mesa</th>
+      <th>Fecha de Apertura de Cuenta</th>
+      <th>Total</th>
+      <th>Detalle</th>
     </tr>
   </thead>
   <tbody>
@@ -17,16 +17,15 @@
       <tr>
         <td><%= link_to account.id, account_path(account) %></td>
         <td><%= account.table_id %></td>
-        <td><%= account.closed_at %></td>
-        <td><%=l account.created_at %></td>
+        <td><%= account.created_at %></td>
+        <td><%= account.total %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_account_path(account), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      account_path(account),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+          <%= link_to 'Ver Cuenta',
+                      account_path(account), :class => 'btn btn-mini btn-success' %>
+          <%= link_to 'Cerrar Cuenta',
+                      checkout_account_path(account),
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Seguro que quiere cerrar la cuenta?')) },
+                      :class => 'btn btn-mini btn-warning' %>
         </td>
       </tr>
     <% end %>
