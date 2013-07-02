@@ -4,6 +4,7 @@ class CreateTables < ActiveRecord::Migration
       t.string  :name, :null => false
       t.integer :seats
       t.string  :status, :default => nil
+      t.integer :parent_id
 
       t.timestamps
     end
