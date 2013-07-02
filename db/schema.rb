@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20130618204352) do
     t.string   "name",       :null => false
     t.integer  "seats"
     t.string   "status"
+    t.integer  "parent_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
