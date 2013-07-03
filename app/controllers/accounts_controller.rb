@@ -2,7 +2,7 @@ class AccountsController < ApplicationController
 
   def index
 
-    @accounts = Account.all
+    @accounts = Account.where(:closed_at => nil)
 
   end
   def show
@@ -42,6 +42,36 @@ class AccountsController < ApplicationController
   def checkout
       @account = Account.find params[:id]
       @account_items = @account.account_items
+  end
+
+  def close
+    account = Account.find params[:id]
+
+    account_items = params[:account][:account_items_attributes]
+    account_items.each do |index, values|
+      account_item = AccountItem.find values[:id]
+      account_item.quantity = values[:quantity]
+      account_item.price = values[:price]
+      if account_item.valid?
+        account_item.save
+      else
+        redirect_to account_path(account.id), :error => 'No se pudo cerrar la cuenta'
+      end
+    end
+
+    account.discount = params[:account][:discount]
+    account.total -= account.discount
+    account.closed_at = Time.now
+    if account.save
+      redirect_to receipt_account_path(account.id), :layout => nil
+    else
+      redirect_to account_path(account.id), :error => 'No se pudo cerrar la cuenta'
+    end
+  end
+
+  def receipt
+    @account = Account.find params[:id]
+    @account_items = @account.account_items
   end
 
 end

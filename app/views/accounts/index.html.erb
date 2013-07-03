@@ -18,7 +18,7 @@
         <td><%= link_to account.id, account_path(account) %></td>
         <td><%= account.table_id %></td>
         <td><%= account.created_at %></td>
-        <td><%= account.total %></td>
+        <td><%= number_to_currency(account.total) %></td>
         <td>
           <%= link_to 'Ver Cuenta',
                       account_path(account), :class => 'btn btn-mini btn-success' %>

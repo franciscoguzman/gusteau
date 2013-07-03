@@ -13,6 +13,8 @@ Gusteau::Application.routes.draw do
   resources :accounts, :except => [:create] do
     member do
       get 'checkout'
+      post 'close'
+      get 'receipt'
     end
   end
 
