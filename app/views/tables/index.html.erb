@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1><%= 'Estado de las Mesas' %></h1>
 </div>
-<table class="table table-striped">
+<table class="table table-striped" id="tables-index">
   <thead>
     <tr>
       <th><%= '# Mesa' %></th>
@@ -22,7 +22,11 @@
             <td><%= number_to_currency(table.current_account.total) %></td>
             <td><%= table.current_account.created_at %></td>
         <% else %>
-            <td><span class="btn-success btn-primary btn-small"><%=link_to 'Disponible', new_table_account_path(table) %></span></td>
+            <td><span class="btn-success btn-primary btn-small">
+              <%=link_to new_table_account_path(table) do %>
+                <span>Disponible</span>
+              <% end %>
+            </span></td>
             <td>&nbsp</td>
             <td>&nbsp</td>
         <% end %>
