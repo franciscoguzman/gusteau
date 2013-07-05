@@ -1,9 +1,9 @@
-<div class="page-header">
-  <h1><%= "Cuenta de la mesa #{ @account.table_id }" %>
+<div class="brand">
+  <h4><%= "Cuenta de la mesa #{ @account.table_id }" %>
     <% unless @account.closed_at.present? %>
         <span>(Activa)</span>
     <% end %>
-  </h1>
+  </h4>
 </div>
 
 <dl class="dl-horizontal">
