@@ -1,3 +1,3 @@
 general:
   business_name: 'Reserva la Cofradía'
-  path_to_log: '/app/assets/images/gusteau.png'
+  path_to_logo: 'gusteau.png'
