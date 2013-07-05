@@ -15,11 +15,13 @@ class AccountsController < ApplicationController
   end
 
   def new
+
     @account = Account.new(:table_id => params[:table_id])
-    if @account.save
-      Table.find(params[:table_id]).update_attribute :status, 'En Servicio'
-      redirect_to account_path(@account.id)
+    if  @account.save
+        Table.find(params[:table_id]).update_attribute :status, 'En Servicio'
+        redirect_to account_path(@account.id)
     end
+
   end
 
   def update
