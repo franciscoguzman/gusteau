@@ -3,7 +3,10 @@ class Account < ActiveRecord::Base
   has_many :account_items
   attr_accessible :table, :table_id, :closed_at, :id
   accepts_nested_attributes_for :account_items
-  after_save :close_account if :closed_at
+
+  after_save :release_table, :if => :closed_at
+  before_destroy :release_table
+
 
   def update_total
     total = 0
@@ -12,8 +15,8 @@ class Account < ActiveRecord::Base
     save
   end
 
-  def close_account
-    table.update_attribute :status, nil
+  def release_table
+    table.update_attribute(:status, nil)
   end
 
 end

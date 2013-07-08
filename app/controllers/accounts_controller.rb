@@ -15,13 +15,11 @@ class AccountsController < ApplicationController
   end
 
   def new
-
     @account = Account.new(:table_id => params[:table_id])
     if  @account.save
         Table.find(params[:table_id]).update_attribute :status, 'En Servicio'
         redirect_to account_path(@account.id)
     end
-
   end
 
   def update
@@ -74,6 +72,15 @@ class AccountsController < ApplicationController
   def receipt
     @account = Account.find params[:id]
     @account_items = @account.account_items
+  end
+
+  def cancel
+    @account = Account.find params[:id]
+    unless @account.account_items.present?
+      @account.destroy
+      redirect_to accounts_path, :notice => 'Cuenta cancelada'
+    end
+    render show_account_path(@account.id), :notice => 'No se puede cancelar la cuenta, no está vacía'
   end
 
 end

@@ -15,6 +15,7 @@ Gusteau::Application.routes.draw do
       get 'checkout'
       post 'close'
       get 'receipt'
+      get 'cancel'
     end
   end
 

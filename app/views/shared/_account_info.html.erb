@@ -65,7 +65,7 @@
                   :class => 'btn-large btn-info'%>
   <% else %>
       <%= link_to 'Cancelar',
-                  tables_path(@account.id),
+                  cancel_account_path(@account.id),
                   :data => { :confirm => 'Seguro que quiere cancelar la cuenta?' },
                   :class => 'btn-large btn-warning'%>
   <% end %>
