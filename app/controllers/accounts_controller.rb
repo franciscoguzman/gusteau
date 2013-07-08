@@ -75,12 +75,13 @@ class AccountsController < ApplicationController
   end
 
   def cancel
-    @account = Account.find params[:id]
-    unless @account.account_items.present?
-      @account.destroy
+    account = Account.find params[:id]
+    if account.account_items.present?
+      redirect_to account_path(account.id), :notice => 'No se puede cancelar la cuenta; tiene elementos'
+    else
+      account.destroy
       redirect_to accounts_path, :notice => 'Cuenta cancelada'
     end
-    render show_account_path(@account.id), :notice => 'No se puede cancelar la cuenta, no está vacía'
   end
 
 end
