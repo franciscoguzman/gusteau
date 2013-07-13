@@ -72,6 +72,8 @@ class AccountsController < ApplicationController
   def receipt
     @account = Account.find params[:id]
     @account_items = @account.account_items
+    render layout: "checkout"
+
   end
 
   def cancel
