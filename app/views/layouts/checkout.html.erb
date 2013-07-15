@@ -35,12 +35,14 @@
   <!-- Size should be 32 x 32 pixels -->
   <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 </head>
-<body>
-    <p><%= @app.business_name %></p>
-    <p><%= 'Domicilio' %></br>
-    <%= 'RFC' %></br></p>
+<body onload="window.print();">
+    <p><%= @app.business_name %></br>
+    <%= Date.current %></br>
+    Domicilio</br>
+    RFC</p>
 
     <%= yield %>
+
 
 <%= javascript_include_tag "checkout" %>
 
