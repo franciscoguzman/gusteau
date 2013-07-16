@@ -1,10 +1,10 @@
 <div class="brand">
-  <h4><%= "Cuenta Mesa # #{ @account.table_id }" %></h4>
+  <h4><%= "Cuenta Mesa # #{ @order.table_id }" %></h4>
 </div>
 
 
 
-<table class="table table-striped account-items">
+<table class="table table-striped order-items">
   <col class="qty-column">
   <col class="name-column">
   <col class="price-column">
@@ -18,19 +18,19 @@
   </tr>
   </thead>
   <tbody>
-  <% @account_items.each do |account_item| %>
+  <% @order_items.each do |order_item| %>
       <tr>
-        <td class="td-numeric"><%= account_item.quantity %></td>
-        <td><%= account_item.product.name %></td>
-        <td class="td-numeric"><%= account_item.price %></td>
-        <td class="td-numeric"><%= account_item.price * account_item.quantity %></td>
+        <td class="td-numeric"><%= order_item.quantity %></td>
+        <td><%= order_item.product.name %></td>
+        <td class="td-numeric"><%= order_item.price %></td>
+        <td class="td-numeric"><%= order_item.price * order_item.quantity %></td>
       </tr>
   <% end %>
 
   <tr>
-    <%= form_for @account_item, :url => add_account_item_path do |f| %>
+    <%= form_for @order_item, :url => add_order_item_path do |f| %>
         <%= f.hidden_field :product_id, :class => 'text_field', :id => 'product_id' %>
-        <%= hidden_field_tag 'account_id', @account.id %>
+        <%= hidden_field_tag 'order_id', @order.id %>
         <td class="td-numeric">
           <%= f.text_field :quantity, :class => 'text_field prod-qty' %>
         </td>
@@ -47,10 +47,10 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>Total</td>
-    <td class="td-numeric"><%= @account.total %></td>
+    <td class="td-numeric"><%= @order.total %></td>
   </tr>
   </tbody>
 </table>
 
-<%= @account.submit 'Guardar', :class => 'btn-small btn-primary btn-success prod-submit' %>
+<%= @order.submit 'Guardar', :class => 'btn-small btn-primary btn-success prod-submit' %>
 

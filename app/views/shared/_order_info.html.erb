@@ -1,4 +1,4 @@
-<table class="table table-striped account-items">
+<table class="table table-striped order-items">
   <col class="qty-column">
   <col class="name-column">
   <col class="price-column">
@@ -12,20 +12,20 @@
   </tr>
   </thead>
   <tbody>
-      <% @account_items.each do |account_item| %>
+      <% @order_items.each do |order_item| %>
           <tr>
-            <td class="td-numeric"><%= account_item.quantity %></td>
-            <td><%= account_item.product.name %></td>
-            <td class="td-numeric"><%= account_item.price %></td>
-            <td class="td-numeric"><%= account_item.price * account_item.quantity %></td>
+            <td class="td-numeric"><%= order_item.quantity %></td>
+            <td><%= order_item.product.name %></td>
+            <td class="td-numeric"><%= order_item.price %></td>
+            <td class="td-numeric"><%= order_item.price * order_item.quantity %></td>
           </tr>
       <% end %>
 
-      <% unless @account.closed_at %>
+      <% unless @order.closed_at %>
   <tr>
-    <%= form_for @account_item, :url => add_account_item_path do |f| %>
+    <%= form_for @order_item, :url => add_order_item_path do |f| %>
         <%= f.hidden_field :product_id, :class => 'text_field', :id => 'product_id' %>
-        <%= hidden_field_tag 'account_id', @account.id %>
+        <%= hidden_field_tag 'order_id', @order.id %>
         <td class="td-numeric">
           <%= f.text_field :quantity, :class => 'text_field prod-qty' %>
         </td>
@@ -39,12 +39,12 @@
   </tr>
       <% end %>
 
-   <% if @account.discount.to_f > 0  %>
+   <% if @order.discount.to_f > 0  %>
       <tr>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>Descuento</td>
-        <td class="td-numeric"><%= @account.discount %></td>
+        <td class="td-numeric"><%= @order.discount %></td>
       </tr>
   <% end %>
 
@@ -52,25 +52,25 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td><b>Total</b></td>
-    <td class="td-numeric"><b><%= @account.total %></b></td>
+    <td class="td-numeric"><b><%= @order.total %></b></td>
   </tr>
   </tbody>
 </table>
 </br>
 <div class="form-actions">
-  <% if @account_items.present? && @account.closed_at.nil? %>
+  <% if @order_items.present? && @order.closed_at.nil? %>
       <%= link_to 'Cerrar Cuenta',
-                  checkout_account_path(@account.id),
+                  checkout_order_path(@order.id),
                   :data => { :confirm => 'Seguro que quiere cerrar la cuenta?' },
                   :class => 'btn-large btn-info'%>
   <% else %>
-      <% if @account.closed_at && @account_items.present? %>
+      <% if @order.closed_at && @order_items.present? %>
             <a href="#" onclick="window.print();return false;">Imprimir</a>
-            <%= link_to 'Regresar', accounts_path,
+            <%= link_to 'Regresar', orders_path,
                         :class => 'btn-large btn-warning'%>
       <% else %>
             <%= link_to 'Cancelar',
-                  cancel_account_path(@account.id),
+                  cancel_order_path(@order.id),
                   :data => { :confirm => 'Seguro que quiere cancelar la cuenta?' },
                   :class => 'btn-large btn-warning'%>
       <% end %>

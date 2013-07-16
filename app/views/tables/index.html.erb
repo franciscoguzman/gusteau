@@ -19,11 +19,11 @@
         <td><%= table.seats %></td>
         <% if table.status.present? %>
             <td><span class="btn-info btn-primary btn-small"><%=link_to table.status, table_path(table.id) %></span></td>
-            <td><%= number_to_currency(table.current_account.total) %></td>
-            <td><%= table.current_account.created_at %></td>
+            <td><%= number_to_currency(table.current_order.total) %></td>
+            <td><%= table.current_order.created_at %></td>
         <% else %>
             <td><span class="btn-success btn-primary btn-small">
-              <%=link_to new_table_account_path(table.id) do %>
+              <%=link_to new_table_order_path(table.id) do %>
                 <span>Disponible</span>
               <% end %>
             </span></td>

@@ -1,17 +1,17 @@
 <div class="brand">
-  <h4><%= "Checkout de la mesa #{ @account.table_id }" %></h4>
+  <h4><%= "Checkout de la mesa #{ @order.table_id }" %></h4>
 </div>
 
 <dl class="dl-horizontal">
   <dt><strong><%= 'Folio' %>:</strong></dt>
-  <dd><%= @account.id %></dd>
+  <dd><%= @order.id %></dd>
   <dt><strong><%= 'Fecha/Hora Apertura' %>:</strong></dt>
-  <dd><%= @account.created_at %></dd>
+  <dd><%= @order.created_at %></dd>
 </dl>
 
-<%= form_for @account, :url => close_account_path(@account), :method => :post do |f| %>
+<%= form_for @order, :url => close_order_path(@order), :method => :post do |f| %>
 
-    <table class="table table-striped account-items">
+    <table class="table table-striped order-items">
       <col class="qty-column">
       <col class="name-column">
       <col class="price-column">
@@ -27,13 +27,13 @@
       </thead>
       <tbody>
 
-      <% @account.account_items.each do |account_item| %>
-          <%= f.fields_for :account_items, account_item do |ai| %>
+      <% @order.order_items.each do |order_item| %>
+          <%= f.fields_for :order_items, order_item do |oi| %>
               <tr>
-                <td class="td-numeric"><%= ai.text_field :quantity, :class => 'text_field prod-qty' %></td>
-                <td><%= account_item.product.name %></td>
-                <td class="td-numeric"><%= ai.text_field :price, :class => 'text_field prod-qty' %></td>
-                <td class="td-numeric"><%= account_item.price * account_item.quantity %></td>
+                <td class="td-numeric"><%= oi.text_field :quantity, :class => 'text_field prod-qty' %></td>
+                <td><%= order_item.product.name %></td>
+                <td class="td-numeric"><%= oi.text_field :price, :class => 'text_field prod-qty' %></td>
+                <td class="td-numeric"><%= order_item.price * order_item.quantity %></td>
               </tr>
           <% end %>
 
@@ -51,7 +51,7 @@
         <td>&nbsp;</td>
 
         <td>Total</td>
-        <td class="td-numeric"><%= @account.total %></td>
+        <td class="td-numeric"><%= @order.total %></td>
       </tr>
       </tbody>
     </table>

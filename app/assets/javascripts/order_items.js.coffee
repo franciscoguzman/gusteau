@@ -5,7 +5,7 @@
 $(document).ready ->
   index = 1
   $('#product_name').autocomplete
-    source: "/account_items/search_products",
+    source: "/order_items/search_products",
     minLength: 2,
     select: (event, ui) ->
       $('#product_id').val(ui.item.id)

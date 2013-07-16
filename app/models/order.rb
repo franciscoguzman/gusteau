@@ -1,8 +1,8 @@
-class Account < ActiveRecord::Base
+class Order < ActiveRecord::Base
   belongs_to :table
-  has_many :account_items
+  has_many :order_items
   attr_accessible :table, :table_id, :closed_at, :id
-  accepts_nested_attributes_for :account_items
+  accepts_nested_attributes_for :order_items
 
   after_save :release_table, :if => :closed_at
   before_destroy :release_table
@@ -10,7 +10,7 @@ class Account < ActiveRecord::Base
 
   def update_total
     total = 0
-    account_items.each { |ai| total += (ai.price * ai.quantity) }
+    order_items.each { |ai| total += (ai.price * ai.quantity) }
     self.total = total
     save
   end

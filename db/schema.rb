@@ -11,10 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130710145307) do
+ActiveRecord::Schema.define(:version => 20130716160949) do
 
-  create_table "account_items", :force => true do |t|
-    t.integer  "account_id"
+  create_table "app_settings", :force => true do |t|
+    t.string "app_code"
+    t.string "business_name"
+    t.string "logo"
+    t.string "stylesheet"
+  end
+
+  create_table "order_items", :force => true do |t|
+    t.integer  "order_id"
     t.integer  "product_id"
     t.integer  "quantity"
     t.decimal  "price"
@@ -22,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20130710145307) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "accounts", :force => true do |t|
+  create_table "orders", :force => true do |t|
     t.integer  "table_id",                    :null => false
     t.decimal  "total",      :default => 0.0
     t.decimal  "discount",   :default => 0.0
@@ -31,13 +38,6 @@ ActiveRecord::Schema.define(:version => 20130710145307) do
     t.datetime "paid_at"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
-  end
-
-  create_table "app_settings", :force => true do |t|
-    t.string "app_code"
-    t.string "business_name"
-    t.string "logo"
-    t.string "stylesheet"
   end
 
   create_table "products", :force => true do |t|

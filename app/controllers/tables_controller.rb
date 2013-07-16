@@ -8,9 +8,9 @@ class TablesController < ApplicationController
 
   def show
     @table = Table.find(params[:id])
-    # Find accounts for this table that are open
-    @account = Account.where(:table_id => @table.id, :closed_at => nil).first
-    @account_items = @account.account_items if @account
-    @account_item = AccountItem.new
+    # Find orders for this table that are open
+    @order = Order.where(:table_id => @table.id, :closed_at => nil).first
+    @order_items = @order.order_items if @order
+    @order_item = OrderItem.new
   end
 end
