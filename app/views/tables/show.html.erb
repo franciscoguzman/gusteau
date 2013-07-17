@@ -14,9 +14,21 @@
 <% if @order %>
     <div>
       <%= render :partial => '/shared/order_info' %>
-
     </div>
 
-<% else %>
+    <div class="form-actions">
+      <% if @order_items.present? && @order.closed_at.nil? %>
+          <%= link_to 'Cerrar Cuenta',
+                    checkout_order_path(@order.id),
+                    :data => { :confirm => 'Seguro que quiere cerrar la cuenta?' },
+                    :class => 'btn-large btn-info'%>
+      <% else %>
+            <%= link_to 'Cancelar',
+                    cancel_order_path(@order.id),
+                    :data => { :confirm => 'Seguro que quiere cancelar la cuenta?' },
+                    :class => 'btn-large btn-warning'%>
+      <% end %>
+    </div>
+
 
 <%end%>
