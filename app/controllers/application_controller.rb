@@ -1,10 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :app_id
+  before_filter :app_id, :require_login
   helper_method :current_user
 
   def app_id
     @app ||= AppSettings.first
+  end
+
+  def require_login
+    redirect_to log_in_path unless session[:user_id]
   end
 
   private
