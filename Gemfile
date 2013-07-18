@@ -15,6 +15,7 @@ gem 'rails', '3.2.13'
 gem 'mysql2'
 gem 'json'
 gem 'pg'
+gem "bcrypt-ruby", :require => "bcrypt"
 
 group :development, :test do
   gem 'pry-rails'

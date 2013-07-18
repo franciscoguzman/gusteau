@@ -1,5 +1,12 @@
 Gusteau::Application.routes.draw do
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "registro" => "users#new", :as => "sing_up"
+
+  resources :users
+  resources :sessions
   resources :products
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
