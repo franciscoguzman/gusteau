@@ -1,4 +1,4 @@
-<h1>Registro</h1>
+<h3>Registro</h3>
 
 <%= form_for @user do |f| %>
     <% if @user.errors.any? %>
@@ -23,5 +23,5 @@
       <%= f.label 'Confirmar Password' %><br />
       <%= f.password_field :password_confirmation %>
     </p>
-    <p class="button"><%= f.submit %></p>
+    <p class="button"><%= f.submit 'Crear Usuario' %></p>
 <% end %>

@@ -3,8 +3,8 @@ Gusteau::Application.routes.draw do
   get "log_in" => "sessions#new", :as => "log_in"
   get "registro" => "users#new", :as => "sign_up"
 
-  resources :users
-  resources :sessions
+  resources :users, :only => [:new, :index, :create, :destroy]
+  resources :sessions, :only => [:new, :index, :create, :destroy]
   resources :products
 
 
