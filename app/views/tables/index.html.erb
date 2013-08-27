@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h3>Mesas</h3>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Mesa</th>
+      <th>Estado</th>
+      <th>Asientos</th>
+      <th>Created_at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tables.each do |table| %>
+      <tr>
+        <td><%= table.id %></td>
+        <td><%= link_to table.name, table_path(table) %></td>
+        <td>
+          <% if table.status.nil? %>
+              <%= link_to "Disponible", table_path(table) %>
+          <% else %>
+              <%= link_to table.status, table_path(table) %>
+          <% end %>
+        </td>
+        <td><%= table.seats %></td>
+        <td><%=l table.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_table_path,
+            :class => 'btn btn-primary' %>
