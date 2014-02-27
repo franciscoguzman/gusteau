@@ -4,17 +4,13 @@ class OrdersController < ApplicationController
   def index
     @orders = Order.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @orders }
-    end
   end
 
   # GET /orders/1
   # GET /orders/1.json
   def show
     @order = Order.find(params[:id])
-
+    @order_items = @order.order_items
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @order }

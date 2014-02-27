@@ -4,21 +4,13 @@ class TablesController < ApplicationController
   def index
     @tables = Table.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tables }
-    end
   end
 
   # GET /tables/1
   # GET /tables/1.json
   def show
     @table = Table.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @table }
-    end
+    @order = Order.where(:table_id => @table.id, :closed_at => nil).first
   end
 
   # GET /tables/new
@@ -26,10 +18,6 @@ class TablesController < ApplicationController
   def new
     @table = Table.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @table }
-    end
   end
 
   # GET /tables/1/edit

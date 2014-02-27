@@ -1,7 +1,49 @@
 @import "twitter/bootstrap/bootstrap";
-body { padding-top: 60px; }
+body { padding-top: 50px; }
 @import "twitter/bootstrap/responsive";
 
+.order-items {
+  width: 500px;
+  max-width: 460px;
+}
+
+.qty-column, .price-column {
+  width: 80px;
+}
+
+.name-column {
+  max-width: 300px;
+}
+
+td.td-numeric {
+  text-align: right;
+  padding-right: 25px;
+}
+
+.prod-qty {
+  width: 30px;
+}
+
+.prod-name {
+  width: 190px;
+}
+
+.prod-submit {
+  margin-top: -10px;
+}
+
+#tables-index {
+  td {
+    span {
+      display: block;
+      width: 90px;
+      text-align: center;
+    }
+    span.btn-success:hover {
+      background: orangered;
+    }
+  }
+}
 // Set the correct sprite paths
 @iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings");
 @iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white");

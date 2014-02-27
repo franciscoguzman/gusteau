@@ -1,14 +1,12 @@
-<div class="page-header">
-  <h3>Mesas</h3>
-</div>
-<table class="table table-striped">
+<h4>Mesas</h4>
+<table class="table table-striped" id="tables-index">
   <thead>
     <tr>
       <th>Id</th>
       <th>Mesa</th>
       <th>Estado</th>
       <th>Asientos</th>
-      <th>Created_at</th>
+      <th>Total</th>
     </tr>
   </thead>
   <tbody>
@@ -16,20 +14,19 @@
       <tr>
         <td><%= table.id %></td>
         <td><%= link_to table.name, table_path(table) %></td>
-        <td>
           <% if table.status.nil? %>
-              <%= link_to "Disponible", table_path(table) %>
+              <td><span class="btn btn-success btn-primary btn-small">
+                <%= link_to "Disponible", table_path(table) %></span>
+              </td>
           <% else %>
-              <%= link_to table.status, table_path(table) %>
+              <td><span class="btn-info btn-primary btn-small">
+                <%= link_to table.status, table_path(table) %></span>
+              </td>
           <% end %>
-        </td>
         <td><%= table.seats %></td>
-        <td><%=l table.created_at %></td>
+        <td><%= "Total de la Orden" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_table_path,
-            :class => 'btn btn-primary' %>
