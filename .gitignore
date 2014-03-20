@@ -1,1 +1,15 @@
-tmp
+.DS_Store
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.idea/
+config/database.yml
+.sass-cache/
+.rbenv-version
+.ruby-version
+.rvmrc
+.powrc
+.ruby-version
+**.orig
+

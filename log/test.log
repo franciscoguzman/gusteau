@@ -12365,3 +12365,536 @@ Processing by TablesController#show as HTML
   Rendered tables/show.html.erb within layouts/application (1.4ms)
 Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 1.0ms)
   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.1ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00], ["description", nil], ["name", "MyString"], ["price", nil], ["updated_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", "14"]]
+  Rendered products/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 15.6ms (Views: 12.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProductsController#new as HTML
+Completed 200 OK in 2.5ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00], ["description", nil], ["name", "MyString"], ["price", nil], ["updated_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"name"=>"invalid value"}, "id"=>"15"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", "15"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 3.9ms (Views: 1.3ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00], ["description", nil], ["name", "MyString"], ["price", nil], ["updated_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"name"=>"invalid value"}, "id"=>"16"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", "16"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 3.6ms (Views: 1.3ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00], ["description", nil], ["name", "MyString"], ["price", nil], ["updated_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"name"=>"MyString"}, "id"=>"17"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", "17"]]
+Completed 200 OK in 2.6ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00], ["description", nil], ["name", "MyString"], ["price", nil], ["updated_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"name"=>"MyString"}, "id"=>"18"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", "18"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/18
+Completed 302 Found in 3.7ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00], ["description", nil], ["name", "MyString"], ["price", nil], ["updated_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"name"=>"MyString"}, "id"=>"19"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", "19"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/19
+Completed 302 Found in 2.2ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"name"=>"invalid value"}}
+Completed 200 OK in 1.5ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"name"=>"invalid value"}}
+Completed 200 OK in 1.3ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "products" 
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"name"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00], ["description", nil], ["name", "MyString"], ["price", nil], ["updated_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/20
+Completed 302 Found in 2.4ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "products" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"name"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00], ["description", nil], ["name", "MyString"], ["price", nil], ["updated_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/21
+Completed 302 Found in 2.1ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"name"=>"MyString"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00], ["description", nil], ["name", "MyString"], ["price", nil], ["updated_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/products/22
+Completed 302 Found in 2.2ms (ActiveRecord: 0.6ms)
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00], ["description", nil], ["name", "MyString"], ["price", nil], ["updated_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", "23"]]
+Completed 200 OK in 2.0ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00], ["description", nil], ["name", "MyString"], ["price", nil], ["updated_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" [0m
+Completed 200 OK in 2.2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00], ["description", nil], ["name", "MyString"], ["price", nil], ["updated_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", "25"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 25]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/products
+Completed 302 Found in 2.8ms (ActiveRecord: 0.9ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00], ["description", nil], ["name", "MyString"], ["price", nil], ["updated_at", Thu, 06 Mar 2014 22:46:01 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "products" 
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", "26"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 26]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/products
+Completed 302 Found in 2.7ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "products" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  Rendered products/_form.html.erb (255.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/products" for 127.0.0.1 at 2014-03-06 22:46:01 +0000
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" 
+Completed 200 OK in 6.0ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "tables" ("created_at", "name", "seats", "status", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["name", "MyString"], ["seats", nil], ["status", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TablesController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mTable Load (0.5ms)[0m  SELECT "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT 1  [["id", "18"]]
+  [1m[36mOrder Load (0.4ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."table_id" = 18 AND "orders"."closed_at" IS NULL LIMIT 1[0m
+Completed 200 OK in 9.4ms (Views: 2.9ms | ActiveRecord: 2.6ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by TablesController#new as HTML
+Completed 200 OK in 1.7ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tables" ("created_at", "name", "seats", "status", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["name", "MyString"], ["seats", nil], ["status", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TablesController#update as HTML
+  Parameters: {"table"=>{"name"=>"invalid value"}, "id"=>"19"}
+  [1m[36mTable Load (0.2ms)[0m  [1mSELECT "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT 1[0m  [["id", "19"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 3.8ms (Views: 1.3ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tables" ("created_at", "name", "seats", "status", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["name", "MyString"], ["seats", nil], ["status", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TablesController#update as HTML
+  Parameters: {"table"=>{"name"=>"invalid value"}, "id"=>"20"}
+  [1m[36mTable Load (0.3ms)[0m  [1mSELECT "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT 1[0m  [["id", "20"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 3.0ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tables" ("created_at", "name", "seats", "status", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["name", "MyString"], ["seats", nil], ["status", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TablesController#update as HTML
+  Parameters: {"table"=>{"name"=>"MyString"}, "id"=>"21"}
+  [1m[36mTable Load (0.2ms)[0m  [1mSELECT "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT 1[0m  [["id", "21"]]
+Completed 200 OK in 2.1ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tables" ("created_at", "name", "seats", "status", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["name", "MyString"], ["seats", nil], ["status", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TablesController#update as HTML
+  Parameters: {"table"=>{"name"=>"MyString"}, "id"=>"22"}
+  [1m[36mTable Load (0.2ms)[0m  [1mSELECT "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT 1[0m  [["id", "22"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/tables/22
+Completed 302 Found in 3.2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tables" ("created_at", "name", "seats", "status", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["name", "MyString"], ["seats", nil], ["status", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TablesController#update as HTML
+  Parameters: {"table"=>{"name"=>"MyString"}, "id"=>"23"}
+  [1m[36mTable Load (0.2ms)[0m  [1mSELECT "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT 1[0m  [["id", "23"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/tables/23
+Completed 302 Found in 2.2ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by TablesController#create as HTML
+  Parameters: {"table"=>{"name"=>"invalid value"}}
+Completed 200 OK in 1.6ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by TablesController#create as HTML
+  Parameters: {"table"=>{"name"=>"invalid value"}}
+Completed 200 OK in 1.3ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tables" 
+Processing by TablesController#create as HTML
+  Parameters: {"table"=>{"name"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tables" ("created_at", "name", "seats", "status", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["name", "MyString"], ["seats", nil], ["status", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/tables/24
+Completed 302 Found in 2.3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tables" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by TablesController#create as HTML
+  Parameters: {"table"=>{"name"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tables" ("created_at", "name", "seats", "status", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["name", "MyString"], ["seats", nil], ["status", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/tables/25
+Completed 302 Found in 2.3ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by TablesController#create as HTML
+  Parameters: {"table"=>{"name"=>"MyString"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tables" ("created_at", "name", "seats", "status", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["name", "MyString"], ["seats", nil], ["status", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/tables/26
+Completed 302 Found in 2.2ms (ActiveRecord: 0.5ms)
+  [1m[36mTable Load (0.3ms)[0m  [1mSELECT "tables".* FROM "tables" ORDER BY "tables"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tables" ("created_at", "name", "seats", "status", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["name", "MyString"], ["seats", nil], ["status", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TablesController#edit as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mTable Load (0.2ms)[0m  [1mSELECT "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT 1[0m  [["id", "27"]]
+Completed 200 OK in 1.9ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tables" ("created_at", "name", "seats", "status", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["name", "MyString"], ["seats", nil], ["status", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TablesController#index as HTML
+  [1m[36mTable Load (0.2ms)[0m  [1mSELECT "tables".* FROM "tables" [0m
+Completed 200 OK in 2.2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tables" ("created_at", "name", "seats", "status", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["name", "MyString"], ["seats", nil], ["status", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TablesController#destroy as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mTable Load (0.2ms)[0m  [1mSELECT "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT 1[0m  [["id", "29"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "tables" WHERE "tables"."id" = $1[0m  [["id", 29]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/tables
+Completed 302 Found in 2.7ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tables" ("created_at", "name", "seats", "status", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["name", "MyString"], ["seats", nil], ["status", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tables" 
+Processing by TablesController#destroy as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mTable Load (0.2ms)[0m  [1mSELECT "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT 1[0m  [["id", "30"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "tables" WHERE "tables"."id" = $1[0m  [["id", 30]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/tables
+Completed 302 Found in 2.1ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tables" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  Rendered products/_form.html.erb (2.8ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/tables" for 127.0.0.1 at 2014-03-06 22:46:02 +0000
+Processing by TablesController#index as HTML
+  [1m[35mTable Load (0.2ms)[0m  SELECT "tables".* FROM "tables" 
+Completed 200 OK in 4.1ms (Views: 3.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/orders" for 127.0.0.1 at 2014-03-06 22:46:02 +0000
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" [0m
+Completed 200 OK in 6.4ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "orders" ("closed_at", "created_at", "discount", "table_id", "total", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["closed_at", nil], ["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["discount", nil], ["table_id", 1], ["total", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mOrder Load (0.5ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", "14"]]
+Completed 200 OK in 524.6ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+  [1m[35mOrderItem Load (0.4ms)[0m  SELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = 14
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by OrdersController#new as HTML
+Completed 200 OK in 1.8ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "orders" ("closed_at", "created_at", "discount", "table_id", "total", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["closed_at", nil], ["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["discount", nil], ["table_id", 1], ["total", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by OrdersController#update as HTML
+  Parameters: {"order"=>{"table_id"=>"invalid value"}, "id"=>"15"}
+  [1m[35mOrder Load (0.3ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", "15"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 4.1ms (Views: 1.3ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "orders" ("closed_at", "created_at", "discount", "table_id", "total", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["closed_at", nil], ["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["discount", nil], ["table_id", 1], ["total", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by OrdersController#update as HTML
+  Parameters: {"order"=>{"table_id"=>"invalid value"}, "id"=>"16"}
+  [1m[35mOrder Load (0.3ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", "16"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 3.1ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("closed_at", "created_at", "discount", "table_id", "total", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["closed_at", nil], ["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["discount", nil], ["table_id", 1], ["total", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by OrdersController#update as HTML
+  Parameters: {"order"=>{"table_id"=>"1"}, "id"=>"17"}
+  [1m[35mOrder Load (0.3ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", "17"]]
+Completed 200 OK in 2.1ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "orders" ("closed_at", "created_at", "discount", "table_id", "total", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["closed_at", nil], ["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["discount", nil], ["table_id", 1], ["total", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by OrdersController#update as HTML
+  Parameters: {"order"=>{"table_id"=>"1"}, "id"=>"18"}
+  [1m[35mOrder Load (0.3ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", "18"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/orders/18
+Completed 302 Found in 3.3ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("closed_at", "created_at", "discount", "table_id", "total", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["closed_at", nil], ["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["discount", nil], ["table_id", 1], ["total", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by OrdersController#update as HTML
+  Parameters: {"order"=>{"table_id"=>"1"}, "id"=>"19"}
+  [1m[35mOrder Load (0.3ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", "19"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/orders/19
+Completed 302 Found in 2.3ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by OrdersController#create as HTML
+  Parameters: {"order"=>{"table_id"=>"invalid value"}}
+Completed 200 OK in 1.6ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by OrdersController#create as HTML
+  Parameters: {"order"=>{"table_id"=>"invalid value"}}
+Completed 200 OK in 1.4ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "orders" [0m
+Processing by OrdersController#create as HTML
+  Parameters: {"order"=>{"table_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "orders" ("closed_at", "created_at", "discount", "table_id", "total", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["closed_at", nil], ["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["discount", nil], ["table_id", 1], ["total", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/orders/20
+Completed 302 Found in 2.3ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "orders" [0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by OrdersController#create as HTML
+  Parameters: {"order"=>{"table_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "orders" ("closed_at", "created_at", "discount", "table_id", "total", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["closed_at", nil], ["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["discount", nil], ["table_id", 1], ["total", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/orders/21
+Completed 302 Found in 2.2ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by OrdersController#create as HTML
+  Parameters: {"order"=>{"table_id"=>"1"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("closed_at", "created_at", "discount", "table_id", "total", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["closed_at", nil], ["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["discount", nil], ["table_id", 1], ["total", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/orders/22
+Completed 302 Found in 2.3ms (ActiveRecord: 0.6ms)
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("closed_at", "created_at", "discount", "table_id", "total", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["closed_at", nil], ["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["discount", nil], ["table_id", 1], ["total", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by OrdersController#edit as HTML
+  Parameters: {"id"=>"23"}
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", "23"]]
+Completed 200 OK in 1.9ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("closed_at", "created_at", "discount", "table_id", "total", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["closed_at", nil], ["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["discount", nil], ["table_id", 1], ["total", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" 
+Completed 200 OK in 1.5ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("closed_at", "created_at", "discount", "table_id", "total", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["closed_at", nil], ["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["discount", nil], ["table_id", 1], ["total", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by OrdersController#destroy as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", "25"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "orders" WHERE "orders"."id" = $1  [["id", 25]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/orders
+Completed 302 Found in 2.7ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "orders" ("closed_at", "created_at", "discount", "table_id", "total", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["closed_at", nil], ["created_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00], ["discount", nil], ["table_id", 1], ["total", nil], ["updated_at", Thu, 06 Mar 2014 22:46:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "orders" [0m
+Processing by OrdersController#destroy as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", "26"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "orders" WHERE "orders"."id" = $1  [["id", 26]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/orders
+Completed 302 Found in 2.0ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "orders" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
